@@ -1,1 +1,1 @@
-# summer_camps
+# SummerCamps
