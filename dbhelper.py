@@ -20,7 +20,22 @@ def get_enrollments():
         print(e)
 
 
-get_enrollments()
+def get_camps():
+    try:
+        with connect(
+                host="localhost",
+                user='root',
+                password='tomato',
+        ) as connection:
+            enrollments = []
+            get_camps_query = "select * from SummerCamps.Camps"
+            with connection.cursor() as cursor:
+                cursor.execute(get_camps_query)
+                for record in cursor:
+                    enrollments.append(record)
+                return enrollments
+    except Error as e:
+        print(e)
 
 
 # create connection to update the database
@@ -41,9 +56,9 @@ def write_to_db(camp_query):
 
 # write path for child_information
 
-def create_child(student_id, name, allergies, age):
-    create_child_query = "insert into SummerCamps.child_information (student_id, name, allergies, age) " \
-                         "values ({}, \"{}\", \"{}\", {})".format(student_id, name, allergies, age)
+def create_child(name, allergies, age):
+    create_child_query = "insert into SummerCamps.child_information (name, allergies, age) " \
+                         "values (\"{}\", \"{}\", {})".format(name, allergies, age)
     write_to_db(create_child_query)
     print(create_child_query)
 
@@ -70,8 +85,8 @@ def add_camp(name, description, MIN_AGE, MAX_AGE, price_per_week):
     write_to_db(add_camp_query)
 
 
-def delete_camp(name):
-    delete_camp_query = "DELETE FROM SummerCamps.Camps WHERE name like \"{}\"".format(name)
+def delete_camp(camp_id):
+    delete_camp_query = "DELETE FROM SummerCamps.Camps WHERE CampID = {}".format(camp_id)
     print(delete_camp_query)
     write_to_db(delete_camp_query)
 
@@ -83,11 +98,8 @@ def update_camp_price(CampID, new_price):
     write_to_db(update_camp_price_query)
 
 
-def update_camp_ages(CampID, new_MIN_AGE, new_MAX_AGE, ):
+def update_camp_ages(CampID, new_MIN_AGE, new_MAX_AGE):
     update_camp_ages_query = "UPDATE SummerCamps.Camps SET MIN_AGE = {}, MAX_AGE = {} WHERE CampID = {}".format(
         new_MIN_AGE, new_MAX_AGE, CampID)
     print(update_camp_ages_query)
     write_to_db(update_camp_ages_query)
-
-
-update_camp_ages(1, 80000, 90000)

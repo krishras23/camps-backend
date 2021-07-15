@@ -1,0 +1,339 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2021-07-15T23:14:23.011Z",
+  "__export_source": "insomnia.desktop.app:v2021.3.0",
+  "resources": [
+    {
+      "_id": "req_1db880885db940a58c593718402b3ced",
+      "parentId": "wrk_4f57f0ee31da4bac9fd5da4007b07180",
+      "modified": 1626390041789,
+      "created": 1626390038121,
+      "url": "{{ _.server_uri }}",
+      "name": "Show enrollments",
+      "description": "",
+      "method": "GET",
+      "body": { },
+      "parameters": [ ],
+      "headers": [ ],
+      "authentication": { },
+      "metaSortKey": -1626390038121,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_4f57f0ee31da4bac9fd5da4007b07180",
+      "parentId": null,
+      "modified": 1626390841091,
+      "created": 1626380870971,
+      "name": "SummerCamp API",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_9d05cc81db2f4fdcaffd9c23c9b7aba3",
+      "parentId": "wrk_4f57f0ee31da4bac9fd5da4007b07180",
+      "modified": 1626390078793,
+      "created": 1626388462914,
+      "url": "{{ _.server_uri }}/show_camps",
+      "name": "Show All Camps",
+      "description": "",
+      "method": "GET",
+      "body": { },
+      "parameters": [ ],
+      "headers": [ ],
+      "authentication": { },
+      "metaSortKey": -1626389680224,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_c31ce0c091c6467ca4337645676f7634",
+      "parentId": "wrk_4f57f0ee31da4bac9fd5da4007b07180",
+      "modified": 1626390423298,
+      "created": 1626390069658,
+      "url": "{{ _.server_uri }}/add_kid",
+      "name": "Add Kid",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"name\": \"john\",\n\"allergies\":\"none\",\n\"age\":21}"
+      },
+      "parameters": [ ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_32ada0d305dc44c5876c3cb126ed3c29"
+        }
+      ],
+      "authentication": { },
+      "metaSortKey": -1626389322327,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_2e056fce13454ca880a62b47c2989a1d",
+      "parentId": "wrk_4f57f0ee31da4bac9fd5da4007b07180",
+      "modified": 1626390050112,
+      "created": 1626388556029,
+      "url": "{{ _.server_uri }}/add_camp",
+      "name": "Add Camp",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"name\": \"krish's camp\",\n\"description\": \"best camp in the universe\",\n\"MIN_AGE\":10,\n\"MAX_AGE\": 34,\n\"price_per_week\": 8000}"
+      },
+      "parameters": [ ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_4720f7ca4caf4c979b0065213ed0f38e"
+        }
+      ],
+      "authentication": { },
+      "metaSortKey": -1626388964430,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_325f3bf58525443eac2956c47757cb6f",
+      "parentId": "wrk_4f57f0ee31da4bac9fd5da4007b07180",
+      "modified": 1626390716671,
+      "created": 1626390478507,
+      "url": "{{ _.server_uri }}/update_kid_age",
+      "name": "Update Kid Age",
+      "description": "",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"name\": \"John\",\n \"new_age\":34}"
+      },
+      "parameters": [ ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_523af15204d9464d8668291815bbffe2"
+        }
+      ],
+      "authentication": { },
+      "metaSortKey": -1626388785481.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_1d3dc8a04c314e0990be3f73a55459ea",
+      "parentId": "wrk_4f57f0ee31da4bac9fd5da4007b07180",
+      "modified": 1626388905586,
+      "created": 1626388606533,
+      "url": "{{ _.server_uri }}/update_camp_ages",
+      "name": "Update Camp Ages",
+      "description": "",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"CampID\":1,\n\"new_MIN_AGE\" : 1000,\n\"new_MAX_AGE\": 200}"
+      },
+      "parameters": [ ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_ae3f7c28191941a2817345ceb6979188"
+        }
+      ],
+      "authentication": { },
+      "metaSortKey": -1626388606533,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_217fdd7a67b848b8a188df905b9a290b",
+      "parentId": "wrk_4f57f0ee31da4bac9fd5da4007b07180",
+      "modified": 1626389031440,
+      "created": 1626388584360,
+      "url": "{{ _.server_uri }}/update_camp_price",
+      "name": "Update Camp Price",
+      "description": "",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"CampID\":4,\n\"new_price\" : 5000}\n\n"
+      },
+      "parameters": [ ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_0d85323b3bbe427caa9c5793cdeff4b1"
+        }
+      ],
+      "authentication": { },
+      "metaSortKey": -1626388584360,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_cf2f7f98d2a3482f888a4a98330bd3de",
+      "parentId": "wrk_4f57f0ee31da4bac9fd5da4007b07180",
+      "modified": 1626390799154,
+      "created": 1626390736268,
+      "url": "{{ _.server_uri }}/delete_kid",
+      "name": "Delete Kid",
+      "description": "",
+      "method": "DELETE",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"name\":\"joe\"}"
+      },
+      "parameters": [ ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_6df4c5af0a0744b984af92050a1fd5d9"
+        }
+      ],
+      "authentication": { },
+      "metaSortKey": -1626388577446.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_399c991a093749999feaac42af09e9f2",
+      "parentId": "wrk_4f57f0ee31da4bac9fd5da4007b07180",
+      "modified": 1626389645171,
+      "created": 1626388570533,
+      "url": "{{ _.server_uri }}/delete_camp",
+      "name": "Delete Camp",
+      "description": "",
+      "method": "DELETE",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"camp_id\":6}"
+      },
+      "parameters": [ ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_7c6d9b469ea245db9ff789d930d20d75"
+        }
+      ],
+      "authentication": { },
+      "metaSortKey": -1626388570533,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_505a2442e8114797a0b4f444a440efe7",
+      "parentId": "wrk_4f57f0ee31da4bac9fd5da4007b07180",
+      "modified": 1626380870986,
+      "created": 1626380870986,
+      "name": "Base Environment",
+      "data": { },
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1623288757003,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_2408c58fb78f41968d681f996bea0140",
+      "parentId": "wrk_4f57f0ee31da4bac9fd5da4007b07180",
+      "modified": 1626380871002,
+      "created": 1626380871002,
+      "name": "Default Jar",
+      "cookies": [ ],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_de99b2e05ceb4f918765ade09fa23312",
+      "parentId": "wrk_4f57f0ee31da4bac9fd5da4007b07180",
+      "modified": 1626380871053,
+      "created": 1626380871005,
+      "fileName": "SummerCamps",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_b091cf6a67da43e486e96834daeb4ee4",
+      "parentId": "env_505a2442e8114797a0b4f444a440efe7",
+      "modified": 1626380870989,
+      "created": 1626380870989,
+      "name": "Flask server local",
+      "data": {
+        "server_uri": "http://127.0.0.1:5000"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "server_uri"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1623288847319,
+      "_type": "environment"
+    }
+  ]
+}
