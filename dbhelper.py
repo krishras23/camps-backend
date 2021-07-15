@@ -19,7 +19,9 @@ def get_enrollments():
     except Error as e:
         print(e)
 
+
 get_enrollments()
+
 
 # create connection to update the database
 def write_to_db(camp_query):
@@ -57,3 +59,35 @@ def delete_child(name):
     delete_child_query = "delete from SummerCamps.child_information where name = \"{}\"".format(name)
     write_to_db(delete_child_query)
     print(delete_child_query)
+
+
+# admin permissions
+
+def add_camp(name, description, MIN_AGE, MAX_AGE, price_per_week):
+    add_camp_query = "INSERT INTO SummerCamps.Camps (name, description, MIN_AGE, MAX_AGE, price_per_week) values (\"{" \
+                     "}\", \"{}\", {}, {}, {})".format(name, description, MIN_AGE, MAX_AGE, price_per_week)
+    print(add_camp_query)
+    write_to_db(add_camp_query)
+
+
+def delete_camp(name):
+    delete_camp_query = "DELETE FROM SummerCamps.Camps WHERE name like \"{}\"".format(name)
+    print(delete_camp_query)
+    write_to_db(delete_camp_query)
+
+
+def update_camp_price(CampID, new_price):
+    update_camp_price_query = "UPDATE SummerCamps.Camps SET price_per_week = {} WHERE CampID = {}".format(new_price,
+                                                                                                          CampID)
+    print(update_camp_price_query)
+    write_to_db(update_camp_price_query)
+
+
+def update_camp_ages(CampID, new_MIN_AGE, new_MAX_AGE, ):
+    update_camp_ages_query = "UPDATE SummerCamps.Camps SET MIN_AGE = {}, MAX_AGE = {} WHERE CampID = {}".format(
+        new_MIN_AGE, new_MAX_AGE, CampID)
+    print(update_camp_ages_query)
+    write_to_db(update_camp_ages_query)
+
+
+update_camp_ages(1, 80000, 90000)
