@@ -9,3 +9,5 @@ git clone url: how to clone project from github
 - Min and Max (Age Range)
 - Bookings table
 - Camp Admin API
+- Foreign Key and Joins
+- UI
