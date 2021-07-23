@@ -1,10 +1,13 @@
 import flask
+from flask_cors import CORS
 from flask import request, jsonify
+import json
 
-from dbhelper import create_child, update_child, delete_child, get_enrollments, \
-    add_camp, delete_camp, update_camp_price, update_camp_ages, get_camps
+from dbhelper import create_child, delete_child, get_enrollments, \
+    add_camp, delete_camp, update_camp_price, update_camp_ages, get_camps, update_child
 
 app = flask.Flask(__name__)
+CORS(app)
 app.config["DEBUG"] = True
 
 
@@ -60,17 +63,20 @@ def showing_camps():
         camps_dict[i] = all_camps[z]
         i = i + 1
         z = z + 1
-    return jsonify(camps_dict)
+    json_string = json.dumps(camps_dict)
+    return json_string
 
 
 @app.route('/add_camp', methods=['POST'])
 def adding_camp():
+    print('Received add camp request')
     data = request.get_json()
     name = data['name']
     description = data['description']
     MIN_AGE = data['MIN_AGE']
     MAX_AGE = data['MAX_AGE']
     price_per_week = data['price_per_week']
+    print('Adding a new camp')
     add_camp(name, description, MIN_AGE, MAX_AGE, price_per_week)
     return ""
 
@@ -78,12 +84,14 @@ def adding_camp():
 @app.route('/delete_camp', methods=['DELETE'])
 def deleting_camp():
     data = request.get_json()
-    camp_id = data['camp_id']
-    delete_camp(camp_id)
+
+    CampID = data['CampID']
+    print(CampID)
+    delete_camp(CampID)
     return ""
 
 
-@app.route('/update_camp_price', methods=['PATCH'])
+@app.route('/update_camp_price', methods=['PUT'])
 def updating_camp_price():
     data = request.get_json()
     CampID = data['CampID']
@@ -92,7 +100,7 @@ def updating_camp_price():
     return ""
 
 
-@app.route('/update_camp_ages', methods=['PATCH'])
+@app.route('/update_camp_ages', methods=['PUT'])
 def updating_camp_ages():
     data = request.get_json()
     new_MIN_AGE = data['new_MIN_AGE']

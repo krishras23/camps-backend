@@ -1,8 +1,9 @@
 from mysql.connector import connect, Error
+import json
 
 
 # read path
-def get_enrollments():
+def get_enrollments() -> object:
     try:
         with connect(
                 host="localhost",
@@ -29,6 +30,7 @@ def get_camps():
         ) as connection:
             enrollments = []
             get_camps_query = "select * from SummerCamps.Camps"
+
             with connection.cursor() as cursor:
                 cursor.execute(get_camps_query)
                 for record in cursor:
@@ -81,6 +83,7 @@ def delete_child(name):
 def add_camp(name, description, MIN_AGE, MAX_AGE, price_per_week):
     add_camp_query = "INSERT INTO SummerCamps.Camps (name, description, MIN_AGE, MAX_AGE, price_per_week) values (\"{" \
                      "}\", \"{}\", {}, {}, {})".format(name, description, MIN_AGE, MAX_AGE, price_per_week)
+    print('creating a camp with the query:')
     print(add_camp_query)
     write_to_db(add_camp_query)
 
