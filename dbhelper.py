@@ -1,5 +1,5 @@
-from mysql.connector import connect, Error
 import json
+from mysql.connector import connect, Error
 
 
 # read path

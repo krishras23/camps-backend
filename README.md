@@ -1,16 +1,6 @@
 # SummerCamps
 
-- Make project on Github and then use [Git Clone URL]  
-- Date of Birth
-- Bookings table
-- Foreign Key and Joins
-- UI Frameworks (React)
-- Add last names 
-- Change API so you can only update using unique ID
-
-## Done
-- Min and Max (Age Range)
-- Auto Increment ID (camp id and kid id)
-- Camp Admin Permissions
-- Camp Admin API
+- Server side and middle tier for summer camp web app 
+- Web app allows admin to add camps, get camps, update camps, and delete camps
+- Camp characteristics such as price and age can also be updated   
 

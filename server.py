@@ -67,6 +67,14 @@ def showing_camps():
     return json_string
 
 
+@app.route('/get_schedule', methods=["GET"])
+def getting_schedule():
+    data = request.get_json()
+    print(data)
+
+
+
+
 @app.route('/add_camp', methods=['POST'])
 def adding_camp():
     print('Received add camp request')
