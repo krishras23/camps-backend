@@ -1,6 +1,5 @@
-# SummerCamps
+# Summer Camp Software 
 
-- Server side and middle tier for summer camp web app 
-- Web app allows admin to add camps, get camps, update camps, and delete camps
-- Camp characteristics such as price and age can also be updated   
-
+- 🏖️ Summer camp app allows admin to manage summer camp workflow (add/update/delete camps)
+- Can update price, and camp ages as well as overall information
+- Built with React, Flask, MySQL, and Python
